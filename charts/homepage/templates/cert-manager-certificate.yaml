@@ -1,0 +1,15 @@
+{{- if .Values.certmanager.enabled -}}
+{{- $fullName := include "homepage.fullname" . -}}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ $fullName }}
+spec:
+  secretName: {{ $fullName }}-tls
+  issuerRef:
+    name: {{ .Values.certmanager.issuerName }}
+    kind: {{ .Values.certmanager.kind }}
+  commonName: {{ .Values.certmanager.dnsName | quote }}
+  dnsNames:
+    - {{ .Values.certmanager.dnsName | quote }}
+{{- end}}
