@@ -3,6 +3,16 @@ entries:
   homepage:
   - apiVersion: v2
     appVersion: 0.6.17
+    created: "2023-05-18T06:54:03.837071534Z"
+    description: A Homepage Helm chart for Kubernetes (https://github.com/benphelps/homepage)
+    digest: ac485ab9fd3ace848b85b9d0fa54bd084a50549561d935c235cbb89b2973546a
+    name: homepage
+    type: application
+    urls:
+    - https://github.com/GentooXativa/helm-charts/releases/download/homepage-0.1.1/homepage-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.6.17
     created: "2023-05-17T07:36:01.223331315Z"
     description: A Homepage Helm chart for Kubernetes (https://github.com/benphelps/homepage)
     digest: 855132eceff1b176bc2bc04e61da29f127dc246647fede31029cdb210dcba711
