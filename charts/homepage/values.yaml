@@ -32,7 +32,7 @@ securityContext:
   capabilities:
     drop:
       - ALL
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   runAsNonRoot: true
   runAsUser: 1000
 
@@ -83,3 +83,10 @@ certmanager:
   issuerName: letsencrypt-prod
   kind: ClusterIssuer
   dnsName: "gentoolab.com"
+
+persistence:
+  enabled: true
+  size: 2Gi
+
+traefik:
+  enabled: true

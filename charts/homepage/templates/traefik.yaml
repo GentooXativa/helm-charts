@@ -1,0 +1,18 @@
+{{- if .Values.traefik.enabled -}}
+{{- $fullName := include "homepage.fullname" . -}}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.certmanager.dnsName }}`)
+      kind: Rule
+      services:
+        - name: {{ $fullName }}
+          port: {{ .Values.service.port }}
+  tls:
+    secretName: {{ $fullName }}-tls
+{{- end }}
