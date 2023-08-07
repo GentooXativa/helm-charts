@@ -1,4 +1,5 @@
 services:
   - serviceName: service-name
+    namespace: namespace
     port: 8080
     dns: test.dns.local

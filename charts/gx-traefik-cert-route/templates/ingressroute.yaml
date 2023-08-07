@@ -12,6 +12,7 @@ spec:
       services:
         - name: {{ $value.serviceName }}
           port: {{ $value.port }}
+          namespace: {{ $value.namespace }}
   tls:
     secretName: "{{ $value.dns | replace "." "-" }}-tls"
 {{- end}}
