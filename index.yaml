@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/GentooXativa/helm-charts/releases/download/gx-certmanager-0.1.0/gx-certmanager-0.1.0.tgz
     version: 0.1.0
+  gx-traefik-cert-route:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-08-07T08:15:41.938133247Z"
+    description: A Helm chart for Kubernetes
+    digest: b4e8967f496a765227ec678d2108edd3d4cf5614c319098c3a3c9139f66e486b
+    name: gx-traefik-cert-route
+    type: application
+    urls:
+    - https://github.com/GentooXativa/helm-charts/releases/download/gx-traefik-cert-route-0.1.0/gx-traefik-cert-route-0.1.0.tgz
+    version: 0.1.0
   homepage:
   - apiVersion: v2
     appVersion: 0.6.17
