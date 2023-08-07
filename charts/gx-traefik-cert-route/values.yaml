@@ -1,0 +1,4 @@
+services:
+  - serviceName: service-name
+    port: 8080
+    dns: test.dns.local

@@ -1,0 +1,18 @@
+{{- range $key, $value := .Values.services }}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $value.serviceName }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ $value.dns }}`)
+      kind: Rule
+      services:
+        - name: {{ $value.serviceName }}
+          port: {{ $value.port }}
+  tls:
+    secretName: "{{ $value.dns | replace "." "-" }}-tls"
+{{- end}}
+---
