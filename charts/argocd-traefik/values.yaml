@@ -1,8 +1,0 @@
-dnsName: your.own.domain
-
-argocd:
-  server:
-    extraArgs:
-      - --insecure
-    extensions:
-      enabled: true
