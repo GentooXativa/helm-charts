@@ -7,5 +7,5 @@ services:
     dns: auth.dns.local
     auth:
       enabled: true
-      user: user1
-      password: password1
+      user: dXNlcjE=
+      password: cGFzc3dvcmQx

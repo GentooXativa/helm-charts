@@ -22,8 +22,8 @@ metadata:
   name: "{{ $value.serviceName }}-auth"
 type: kubernetes.io/basic-auth
 data:
-  username: {{$value.auth.username | b64encode}}
-  password: {{$value.auth.password | b64encode}}
+  username: {{$value.auth.username}}
+  password: {{$value.auth.password}}
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware

@@ -26,8 +26,8 @@ metadata:
     {{- include "kavita-reader.labels" . | nindent 4 }}
 type: kubernetes.io/basic-auth
 data:
-  username: {{.Values.traefik.auth.username | b64encode}}
-  password: {{.Values.traefik.auth.password | b64encode}}
+  username: {{.Values.traefik.auth.username }}
+  password: {{.Values.traefik.auth.password }}
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
