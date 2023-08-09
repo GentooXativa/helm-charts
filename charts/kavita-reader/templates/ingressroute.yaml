@@ -9,13 +9,17 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`{{ .Values.traefil.dns }}`)
+    - match: Host(`{{ .Values.traefik.dns }}`)
       kind: Rule
+      {{- if $value.auth.enabled }}
+      middlewares:
+        - name: "{{ $value.serviceName }}-basicauth"
+      {{- end}}      
       services:
         - name: {{ include "kavita-reader.fullname" . }}
           port: {{ .Values.service.port }}
   tls:
-    secretName: "{{ .Values.traefil.dns | replace "." "-" }}-tls"
+    secretName: "{{ .Values.traefik.dns | replace "." "-" }}-tls"
 {{- if .Values.traefik.auth.enabled }}
 ---
 apiVersion: v1
