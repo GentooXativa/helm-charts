@@ -60,8 +60,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: "{{ include "kavita-reader.fullname" . }}-comics"
-          persistentVolumeClaim:
-            claimName: "{{ include "kavita-reader.fullname" . }}-comics"
+          nfs:
+            server: "{{ .Values.comics.nfs.server }}"
+            path: "{{ .Values.comics.nfs.path }}"
         - name: "{{ include "kavita-reader.fullname" . }}-config"
           persistentVolumeClaim:
             claimName: "{{ include "kavita-reader.fullname" . }}-config"            

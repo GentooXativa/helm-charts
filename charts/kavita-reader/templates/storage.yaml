@@ -2,21 +2,6 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 
 metadata:
-  name: "{{ include "kavita-reader.fullname" . }}-comics"
-  labels:
-    {{- include "kavita-reader.labels" . | nindent 4 }}
-
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: {{ .Values.comicsStorageSize }}
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-
-metadata:
   name: "{{ include "kavita-reader.fullname" . }}-config"
   labels:
     {{- include "kavita-reader.labels" . | nindent 4 }}

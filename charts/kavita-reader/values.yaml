@@ -68,7 +68,11 @@ env:
   - name: "TZ"
     value: "Europe/Madrid"
 
-comicsStorageSize: 40Gi
+comics:
+  nfs:
+    server: example.server
+    path: /path/to/comics
+
 configStorageSize: 1Gi
 
 traefik:
