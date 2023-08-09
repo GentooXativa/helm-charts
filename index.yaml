@@ -14,6 +14,16 @@ entries:
   gx-traefik-cert-route:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-08-09T09:07:06.471905029Z"
+    description: A Helm chart for Kubernetes
+    digest: ae0d8912b77644cc33c377396f996dd538a11906d7ae1f04d8099c1f80c51aa3
+    name: gx-traefik-cert-route
+    type: application
+    urls:
+    - https://github.com/GentooXativa/helm-charts/releases/download/gx-traefik-cert-route-0.1.6/gx-traefik-cert-route-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-08-09T09:02:10.907921288Z"
     description: A Helm chart for Kubernetes
     digest: 4e19588d44a68821eee84a2da104d3221823fbcecd006e62e7894a00e279a967
