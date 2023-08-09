@@ -106,6 +106,16 @@ entries:
   kavita-reader:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-08-09T09:13:58.852196894Z"
+    description: A Helm chart for Kubernetes
+    digest: 1f2bc7bfb54a1eb9cb962cc277afe869fab5e5cea51a70dc91e20fcdc8e91a14
+    name: kavita-reader
+    type: application
+    urls:
+    - https://github.com/GentooXativa/helm-charts/releases/download/kavita-reader-0.1.4/kavita-reader-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-08-09T09:02:11.108086835Z"
     description: A Helm chart for Kubernetes
     digest: 70398262a35beff7b633deca0e71dfb980478a27f204265b0d75cac256dbf27c
