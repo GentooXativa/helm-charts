@@ -2,3 +2,10 @@ services:
   - serviceName: service-name
     port: 8080
     dns: test.dns.local
+  - serviceName: service-name-with-auth
+    port: 8081
+    dns: auth.dns.local
+    auth:
+      enabled: true
+      user: user1
+      password: password1
