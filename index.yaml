@@ -83,4 +83,15 @@ entries:
     urls:
     - https://github.com/GentooXativa/helm-charts/releases/download/homepage-0.1.0/homepage-0.1.0.tgz
     version: 0.1.0
+  kavita-reader:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-08-09T08:57:20.189090609Z"
+    description: A Helm chart for Kubernetes
+    digest: 3b1eca268716b1230206cce8cd91b74db2a85c77291613b866b5ce1dd4bb6fcf
+    name: kavita-reader
+    type: application
+    urls:
+    - https://github.com/GentooXativa/helm-charts/releases/download/kavita-reader-0.1.0/kavita-reader-0.1.0.tgz
+    version: 0.1.0
 generated: "2023-05-17T07:36:01.043855096Z"
