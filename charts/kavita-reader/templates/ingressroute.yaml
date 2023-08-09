@@ -11,9 +11,9 @@ spec:
   routes:
     - match: Host(`{{ .Values.traefik.dns }}`)
       kind: Rule
-      {{- if $value.auth.enabled }}
+      {{- if .Values.traefik.auth.enabled }}
       middlewares:
-        - name: "{{ $value.serviceName }}-basicauth"
+        - name: "{{ include "kavita-reader.fullname" . }}-basicauth"
       {{- end}}      
       services:
         - name: {{ include "kavita-reader.fullname" . }}
