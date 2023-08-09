@@ -70,3 +70,10 @@ env:
 
 comicsStorageSize: 40Gi
 configStorageSize: 1Gi
+
+traefik:
+  enabled: true
+  dns: comics.example.org
+  certIssuer: letsencrypt-prod
+  auth:
+    enabled: false

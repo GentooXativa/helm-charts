@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "cert-{{ .Values.traefik.dns | replace "." "-" }}"
+spec:
+  secretName: "{{ .Values.traefik.dns | replace "." "-" }}-tls"
+  issuerRef:
+    name: {{ default "letsencrypt-prod" .Values.traefik.certIssuer }}
+    kind: ClusterIssuer
+  commonName: {{ .Values.traefik.dns | quote }}
+  dnsNames:
+    - {{ .Values.traefik.dns | quote  }}
+---

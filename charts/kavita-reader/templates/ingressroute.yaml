@@ -1,0 +1,44 @@
+{{- if .Values.traefik.enabled }}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "kavita-reader.fullname" . }}
+  labels:
+    {{- include "kavita-reader.labels" . | nindent 4 }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.traefil.dns }}`)
+      kind: Rule
+      services:
+        - name: {{ include "kavita-reader.fullname" . }}
+          port: {{ .Values.service.port }}
+  tls:
+    secretName: "{{ .Values.traefil.dns | replace "." "-" }}-tls"
+{{- if .Values.traefik.auth.enabled }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "{{ include "kavita-reader.fullname" . }}-auth"
+  labels:
+    {{- include "kavita-reader.labels" . | nindent 4 }}
+type: kubernetes.io/basic-auth
+data:
+  username: {{.Values.traefik.auth.username | b64encode}}
+  password: {{.Values.traefik.auth.password | b64encode}}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name:  "{{ include "kavita-reader.fullname" . }}-basicauth"
+  labels:
+    {{- include "kavita-reader.labels" . | nindent 4 }}
+spec:
+  basicAuth:
+    removeHeader: true
+    secret: "{{ include "kavita-reader.fullname" . }}-auth"
+{{- end}}    
+{{- end}}
+---
