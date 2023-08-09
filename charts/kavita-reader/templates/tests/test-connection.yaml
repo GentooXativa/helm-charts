@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "kavita-reader.fullname" . }}-test-connection"
+  labels:
+    {{- include "kavita-reader.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "kavita-reader.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
